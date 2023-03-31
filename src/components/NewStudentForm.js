@@ -37,7 +37,7 @@ export const NewStudentForm=(props)=>{
                <input
                     type='text'
                     placeholder="grade level 3 or 4 or 5"
-                    onChange={(e)=>setlastName(e.target.value)}
+                    onChange={(e)=>setgradeLevel(e.target.value)}
                     value={gradeLevel}
                 />
                 <button type='submit'>Add Student</button>
