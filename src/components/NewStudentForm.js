@@ -19,8 +19,8 @@ export const NewStudentForm=(props)=>{
     };
 
     return(
-        <div>
-            <h5>Add a New Student</h5>
+        <div className="new-form">
+            <h6>Add a New Student</h6>
             <form onSubmit={onSubmit}>
                 <input
                     type='text'
@@ -34,10 +34,10 @@ export const NewStudentForm=(props)=>{
                     onChange={(e)=>setlastName(e.target.value)}
                     value={lastName}
                 />
-                <input 
+               <input
                     type='text'
-                    placeholder='gradeLevel'
-                    onChange={(e)=>setgradeLevel(e.target.value)}
+                    placeholder="grade level 3 or 4 or 5"
+                    onChange={(e)=>setlastName(e.target.value)}
                     value={gradeLevel}
                 />
                 <button type='submit'>Add Student</button>

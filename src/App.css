@@ -1,10 +1,46 @@
 body {
-  background-color: lightblue;
+  background-color: seagreen;
 }
 
 .container{
   width: 70%;
   max-width: 1000px;
   margin: 0 auto;
+  background-color: lightgray;
+}
+
+h4{
+  border-style:solid;
+  border-color: black;
+  background-color: seagreen;
+}
+
+h2{
+  text-align: center;
+}
+
+button{
+  background-color: seagreen;
+}
+
+.new-form{
+  background-color:lightgray;
+}
+
+.del-btn{
+  background-color: gold;
+}
+
+ol {
+  background: darkgray;
+  padding: 20px;
+  list-style-position:inside;
+}
+
+ol li {
+  background: lightgray;
+  color: black;
+  padding: 5px;
+  margin-left: 35px;
 }
 

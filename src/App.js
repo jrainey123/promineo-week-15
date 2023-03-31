@@ -7,7 +7,9 @@ class App extends Component {
    render(){
      return(
        <div>
-          <NavBar />
+        <br></br>
+         <NavBar />
+         <h2>After School Enrichment Program</h2>
          <SessionsList />
        </div>
      )

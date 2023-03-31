@@ -26,7 +26,7 @@ export class SessionsList extends React.Component {
             <div className='session-list'>
                 {this.state.sessions.map((session)=>(
                     <Session
-                    session={session}
+                    session={{...session, _id:session._id}}
                     key={session._id}
                     updateSession={this.updateSession}
                 />    

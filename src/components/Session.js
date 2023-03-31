@@ -3,38 +3,47 @@ import {NewStudentForm} from './NewStudentForm';
 
 export const Session=(props)=>{
     const {session, updateSession} =props;
-
+console.log(session);
     
-    const deleteStudent=(studentId)=>{
-        const updatedSession={
+    const deleteStudent=(lastName)=>{
+                const updatedSession={
             ...session,
-            students: session.students.filter((x)=>x._id !==studentId)
+            students: session.students.filter((student)=>student.lastName !== lastName)
         };
-
+               
         updateSession(updatedSession);
     }
 
     const addNewStudent=(student)=>updateSession({...session, students: [...session.students, student]});
+    console.log(session);
 
     const students=()=>(
-        <ul>
+       
+        <ol>
             {session.students.map((student, index)=>(
                 <li key={index}>
-                    <label>{`${student.firstName} ${student.lastName} Grade: ${student.gradeLevel}`}</label>
-                    <button onClick={(e)=>deleteStudent(student._id)}>Delete</button>
+                    <label>{`${student.firstName} ${student.lastName} --- Grade: ${student.gradeLevel} --- `}</label>
+                
+                    <button className='del-btn' onClick={(e)=>deleteStudent(student.lastName)}>Delete Student</button>
                 </li>
-            ))}
-        </ul>
+                
+                ))}
+      </ol>
     );
-    
+      
     return(
         <div className="container">
-            <h2>Session Name: {session.name}</h2>
+            <br></br>
+            
+            <h4>Session Name: {session.name}</h4>
+            <h5> Day: {session.day} - Size Limit: {session.sizeLimit}</h5>
+            <h6>Registered Students</h6>
+            
             {
                 students({students, sessionId: session._id, deleteStudent})
             }
-            <NewStudentForm addNewStudent={addNewStudent} />
-            <hr class="border border-success border-3 opacity-75"></hr>
+             
+            <NewStudentForm addNewStudent={addNewStudent} /> 
         </div>
     );
 
